@@ -50,7 +50,7 @@ public class ApplicationMain {
 
             boolean gameResult = sudokuValidator.validateGameBoard(board);
 
-            log.info("Game result is {}", gameResult? "VALID":"INVALID");
+            log.info( gameResult? "VALID":"INVALID");
 
         } catch (IOException e) {
             log.error("Game result is INVALID. Error caused calculating:", e);

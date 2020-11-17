@@ -5,7 +5,9 @@ import com.ubs.sudoku.model.Row;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
 import static junit.framework.Assert.assertFalse;
@@ -32,6 +34,17 @@ public class SudokuValidatorTest {
         boolean result = sudokuValidator.validateGameByView(dataList);
 
         assertTrue(result);
+    }
+
+    @Test
+    public void gameViewWillBeValidatedFalseWhenNumbersOutOfRange() {
+
+        int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 19};
+        dataList = asList(data, data, data, data, data, data, data, data, data);
+
+        boolean result = sudokuValidator.validateGameByView(dataList);
+
+        assertFalse(result);
     }
 
     @Test
